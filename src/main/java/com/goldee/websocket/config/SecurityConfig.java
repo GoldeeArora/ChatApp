@@ -35,7 +35,10 @@ public class SecurityConfig {
                                 .csrf(csrf -> csrf.disable())
                                 .cors(c -> c.configurationSource(corsConfigurationSource()))
                                 .authorizeHttpRequests((authorize) -> authorize
-                                                .requestMatchers("/api/auth/**", "/**.jpg", "/ws/**").permitAll()
+                                                .requestMatchers("/", "/index.html", "/static/**", "/api/auth/**",
+                                                                "/**.jpg",
+                                                                "/ws/**")
+                                                .permitAll()
                                                 // .requestMatchers("/**").permitAll()
                                                 .anyRequest().authenticated())
                                 .sessionManagement((session) -> session
@@ -78,7 +81,8 @@ public class SecurityConfig {
                 // configuration.addAllowedOrigin("*"); // Allow all origins
                 // configuration.addAllowedMethod("*"); // Allow all HTTP methods
                 // configuration.addAllowedHeader("*"); // Allow all header
-                configuration.setAllowedOrigins(Arrays.asList("http://localhost:3000", "http://127.0.0.1:5501/"));
+                configuration.setAllowedOrigins(Arrays.asList("http://localhost:3000",
+                                "http://127.0.0.1:5501/,http://localhost:60207"));
                 configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
                 configuration.setAllowedHeaders(Arrays.asList("Content-Type", "Authorization"));
                 configuration.setAllowCredentials(true);
