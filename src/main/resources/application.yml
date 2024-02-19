@@ -1,0 +1,25 @@
+# application.yml
+
+# MongoDB connection settings
+spring:
+  data:
+    mongodb:
+      host: mongo_db
+      port: 27017
+      authentication-database: admin
+      username: goldee
+      password: goldee
+      database: chat_app
+      auto-index-creation: true
+      uri: mongodb://goldee:goldee@localhost:27017/chat_app?authSource=admin
+logging:
+  level:
+    org:
+      springframework:
+        data:
+          mongodb:
+            core:
+              MongoTemplate: DEBUG
+
+server:
+  port: 8080
