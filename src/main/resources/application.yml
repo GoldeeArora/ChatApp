@@ -4,14 +4,15 @@
 spring:
   data:
     mongodb:
-      host: mongo_db
-      port: 27017
-      authentication-database: admin
-      username: goldee
-      password: goldee
-      database: chat_app
-      auto-index-creation: true
-      uri: mongodb://goldee:goldee@localhost:27017/chat_app?authSource=admin
+      # host: mongo_db
+      # port: 27017
+      # authentication-database: admin
+      # username: goldee
+      # password: goldee
+      # database: chat_app
+      # auto-index-creation: true
+      # uri: mongodb://goldee:goldee@localhost:27017/chat_app?authSource=admin
+      uri: mongodb+srv://new-user_1:Goldee_Ji@cluster0.r0oe2on.mongodb.net/chat_app?retryWrites=true&w=majority
 logging:
   level:
     org:
